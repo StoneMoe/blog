@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on StoneMoe&#39;s Blog</title>
+    <link>https://stone.moe/categories/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on StoneMoe&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 03 May 2020 13:53:00 +0000</lastBuildDate>
+    <atom:link href="https://stone.moe/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gitlab 迁移/升级后部分页面500</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/gitlab-500-error-after-upgrade-or-migrate/</link>
+      <pubDate>Sun, 03 May 2020 13:53:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/gitlab-500-error-after-upgrade-or-migrate/</guid>
+      <description>&lt;h2 id=&#34;表现&#34;&gt;表现&lt;/h2&gt;&#xA;&lt;p&gt;在保存管理员设置时，或访问 Repo 的 CI/CD 页面时 500 错误&#xA;查看 Monitoring -&amp;gt; Log -&amp;gt; production.log 时，日志如下&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;OpenSSL::Cipher::CipherError ():&#xD;&#xA;&#xD;&#xA;lib/gitlab/crypto_helper.rb:27:in `aes256_gcm_decrypt&amp;#39;&#xD;&#xA;&amp;lt;...后略...&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>如何重装系统</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-install-os/</link>
+      <pubDate>Sat, 02 May 2020 13:47:13 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-install-os/</guid>
+      <description>&lt;p&gt;这是给零技术基础朋友们看的，简明易懂的系统安装教程。&lt;/p&gt;&#xA;&lt;p&gt;也是为了当有人问起“如何给自己的电脑重装系统”，能够直接把这篇文章给电脑前的你看，而不用我再一句话一句话的打字了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Share folder to Windows with libvirt</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/share-folder-to-windows-with-libvirt-kvm-qemu/</link>
+      <pubDate>Tue, 24 Mar 2020 00:23:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/share-folder-to-windows-with-libvirt-kvm-qemu/</guid>
+      <description>&lt;p&gt;This post introduced how to share linux folder to Windows guest VM&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何在软路由中安装 ESXi</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/install-esxi-directly-at-x86-router/</link>
+      <pubDate>Sun, 26 Aug 2018 12:30:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/install-esxi-directly-at-x86-router/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;这是一篇面向大众的教程&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;对 bare vm supervisor 了解的不多，而ESXi的安装程序又有些智障，在x86软路由上，这安装程序的问题似乎尤为的突出&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;这次折腾ESXi的途中被它坑了两下，这里简单的总结一下遇到的两个坑。&lt;/p&gt;&#xA;&lt;p&gt;ESXi版本: &lt;code&gt;6.7.0&lt;/code&gt; (官网 iso 镜像, rufus 写入 U 盘)&#xA;硬件: 小马 x86 软路由 V2&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何手动升级 glibc 的版本</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-upgrade-linux-glibc-manually/</link>
+      <pubDate>Tue, 31 Jul 2018 14:16:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-upgrade-linux-glibc-manually/</guid>
+      <description>&lt;h2 id=&#34;1-前言&#34;&gt;1 前言&lt;/h2&gt;&#xA;&lt;p&gt;在测试服务器上想把 tensorflow 相关代码部署一下&lt;/p&gt;&#xA;&lt;p&gt;却发现 CentOS 6.1 带的 &lt;code&gt;glibc&lt;/code&gt; 和 &lt;code&gt;libstdc++&lt;/code&gt; 都太老了，tensorflow跑不起来。&lt;/p&gt;&#xA;&lt;p&gt;于是想手动升级一下这两个 lib。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ocserv config-per-group 的配置</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/ocserv-config-example/</link>
+      <pubDate>Sun, 29 Oct 2017 15:12:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/ocserv-config-example/</guid>
+      <description>&lt;p&gt;新增用户时指定用户所在的 Group&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# ocpasswd -c /path/to/passwd/file -g &amp;quot;groupname,groupname2,groupxxx&amp;quot; username&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;ocserv.conf 里面几个关键配置&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 关掉自动选择&#xD;&#xA;auto-select-group = false&#xD;&#xA;# 定义几个 group identify，中括号里面可以写 description&#xD;&#xA;select-group = all&#xD;&#xA;select-group = aws[no bracket or add some description]&#xD;&#xA;select-group = nochn[No CN route]&#xD;&#xA;....&#xD;&#xA;# 指定一个存 config-per-group 的路径&#xD;&#xA;config-per-group = /etc/ocserv/config-per-group/&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后我们&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# mkdir /etc/ocserv/config-per-group&#xD;&#xA;# cd /etc/ocserv/config-per-group&#xD;&#xA;# touch all aws nochn&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后在这几个文件里可以写上 config，来覆盖掉 ocserv.conf 主配置文件的设置。&#xA;比如在 nochn 写上一点 no-route。&#xA;也可以在 aws 写上一些 route，让这个组的用户在连接后只接收一些到 aws 的 route table。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mosh 因为 locale 无法使用的问题</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/mosh-locale-issue/</link>
+      <pubDate>Tue, 10 Oct 2017 16:01:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/mosh-locale-issue/</guid>
+      <description>&lt;h2 id=&#34;0x00-提出问题&#34;&gt;0x00 提出问题&lt;/h2&gt;&#xA;&lt;p&gt;一般遇到这个问题，我们会看到类似于这样的错误信息&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VirtualBox, VMware Workstation, 以及 Hyper-V 的一些对比</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/hypervisor-comparison/</link>
+      <pubDate>Tue, 10 Oct 2017 03:46:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/hypervisor-comparison/</guid>
+      <description>&lt;h2 id=&#34;0x00-到底哪个好&#34;&gt;0x00 到底哪个好？&lt;/h2&gt;&#xA;&lt;p&gt;因为打游戏和别人语音需要用到 YY 和 QQ，而我又实在不想把这两个流氓装在电脑上，于是丢进了虚拟机里。&lt;/p&gt;&#xA;&lt;p&gt;因为是日常使用，并不是开发用途&#xA;所以3D加速让界面能够跟手一些，用的更舒服一些，以及音频设备的延迟能低一些让语音的体验更好，是我的主要需求。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tinc 一把梭快速上手</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/tinc-quickstart/</link>
+      <pubDate>Mon, 11 Sep 2017 17:33:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/tinc-quickstart/</guid>
+      <description>&lt;h2 id=&#34;0x00-小镇的网络&#34;&gt;0x00 小镇的网络&lt;/h2&gt;&#xA;&lt;p&gt;海外 IP 高位端口的 Inbound 流量全都被封了&#xA;原来用的是 Zerotier，不过不受自己控制的 Server 总感觉使用起来怪怪的。&#xA;从 &lt;em&gt;49&lt;/em&gt; 那里了解到了 Tinc VPN&#xA;于是借着这个机会玩一玩高端大气上档次的 SDN/Mesh Network&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>macOS 音量媒体键延迟严重</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/macos-media-key-lag-issue/</link>
+      <pubDate>Mon, 11 Sep 2017 17:29:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/macos-media-key-lag-issue/</guid>
+      <description>&lt;p&gt;冰冷的天里散热风扇胡乱地吹，冰凉的 mac 把它的体温通过C面手托传递给我的手&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

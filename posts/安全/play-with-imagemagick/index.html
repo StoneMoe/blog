@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.152.2">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/" />
+  <link rel="canonical" href="https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/" /><link rel="alternate" type="application/atom+xml" href="https://stone.moe/index.xml" title="StoneMoe&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/stone.moe\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Play with imagemagick",
+      "headline" : "Play with imagemagick",
+      "description" : "0x00 前言 PHP里头比较常见的Web图像处理库有GD和ImageMagick\nGD里头比较常用的有imagecopyresized和imagecopyresampled 怎么调戏这两个函数的变换已经有很多文章和代码了，比如Github gist\n今天简单看看ImageMagick里头有没有什么可以保留数据的方法\n",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-04-18 04:42:00 \u002b0000 UTC",
+      "dateModified" : "2020-04-18 04:42:00 \u002b0000 UTC",
+      "url" : "https:\/\/stone.moe\/posts\/%E5%AE%89%E5%85%A8\/play-with-imagemagick\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Play with imagemagick</title>
+  <meta property="og:title" content="Play with imagemagick" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="0x00 前言 PHP里头比较常见的Web图像处理库有GD和ImageMagick
+GD里头比较常用的有imagecopyresized和imagecopyresampled 怎么调戏这两个函数的变换已经有很多文章和代码了，比如Github gist
+今天简单看看ImageMagick里头有没有什么可以保留数据的方法
+" />
+  <meta name="description" content="0x00 前言 PHP里头比较常见的Web图像处理库有GD和ImageMagick
+GD里头比较常用的有imagecopyresized和imagecopyresampled 怎么调戏这两个函数的变换已经有很多文章和代码了，比如Github gist
+今天简单看看ImageMagick里头有没有什么可以保留数据的方法
+" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>body{font-family:bree serif,sans-serif;-webkit-font-smoothing:antialiased;margin:0 20px}article{max-width:800px;margin-left:auto;margin-right:auto}a{color:#000;text-decoration:none}a:hover{font-weight:600;text-decoration:underline}.post-ads{margin:50px 0}.markdown-body{font-size:18px;max-width:100%}.markdown-body a{text-decoration:underline;text-decoration-color:#000}.markdown-body pre{padding:16px;overflow:auto;border-radius:10px}.markdown-body code{padding:.2em .4em;font-size:85%;background-color:#f6f8fa;border-radius:6px}.markdown-body pre>code{padding:0;font-size:100%;background-color:inherit;border:0}.Chinese .markdown-body{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:700;margin-top:32px;font-family:bungee shade,sans-serif}.header-title a{text-decoration:none}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.2rem;margin:12px 0}.posts-categories{font-size:.8rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px}.site-footer-item{margin-right:12px}.post-content img{max-width:100%;display:block;margin-right:auto;margin-top:12px}.post-header{margin-bottom:50px}.post-title{font-size:2rem;font-weight:600}.post-category{display:inline;font-weight:600;padding:2px 5px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-bottom:50px;margin-top:100px}.related-content li{margin:5px 0}.taxonomy-term{font-size:3rem}.gallery-img{text-align:center}.gallery-img span{text-align:center}.gallery-img-desc{font-size:.8em;font-weight:800}#disqus_thread{position:relative}#disqus_thread:after{content:"";display:block;height:55px;width:100%;position:absolute;bottom:0;background:#fff}@media screen and (max-width:600px){.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-body{font-size:16px}.post-title{font-size:2rem}.post-content p{letter-spacing:.05em}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="StoneMoe&#39;s Blog">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+  <script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
+  <script>
+    const heti = new Heti('.heti');
+    heti.autoSpacing();
+  </script>
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >StoneMoe</a
+    >
+  </div>
+  <div class="header-subtitle"></div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/" target="_blank">Home</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/about" target="_blank">About</a>
+  </div>
+  
+</div>
+<div class="row end-xs">
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Play with imagemagick</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-04-18 04:42:00 UTC">
+                18 Apr 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body heti">
+          
+          <h2 id="0x00-前言">0x00 前言</h2>
+<p>PHP里头比较常见的Web图像处理库有<a href="https://www.php.net/manual/zh/book.image.php">GD</a>和<a href="https://www.php.net/manual/en/book.imagick.php">ImageMagick</a></p>
+<p>GD里头比较常用的有<a href="http://www.php.net/imagecopyresized">imagecopyresized</a>和<a href="https://www.php.net/imagecopyresampled">imagecopyresampled</a>
+怎么调戏这两个函数的变换已经有很多文章和代码了，比如<a href="https://gist.github.com/virink/0f184d20ef9f9d92cfcbc656c56e6738">Github gist</a></p>
+<p>今天简单看看ImageMagick里头有没有什么可以保留数据的方法</p>
+<h2 id="0x01-开始">0x01 开始</h2>
+<p>我们的Imagemagick版本</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; magick --version
+Version: ImageMagick 7.0.10-6 Q16 x86_64 2020-04-07 https://imagemagick.org
+Copyright: © 1999-2020 ImageMagick Studio LLC
+License: https://imagemagick.org/script/license.php
+Features: Cipher DPC HDRI Modules OpenMP(4.5) 
+Delegates (built-in): bzlib cairo fontconfig freetype heic jbig jng jp2 jpeg lcms lqr ltdl lzma openexr pangocairo png raqm raw rsvg tiff webp wmf x xml zlib
+</code></pre><p>随便找张图片看看都有哪些属性</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; magick identify -verbose payload.jpg
+Image: payload.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Mime type: image/jpeg
+  Class: DirectClass
+  Geometry: 139x97+0+0
+  Units: Undefined
+  Colorspace: sRGB
+  Type: TrueColor
+  Base type: Undefined
+  Endianess: Undefined
+  Depth: 8-bit
+  Channel depth:
+    Red: 8-bit
+    Green: 8-bit
+    Blue: 8-bit
+  Channel statistics:
+    Pixels: 13483
+    Red:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 93.4788 (0.366584)
+      standard deviation: 69.5047 (0.272567)
+      kurtosis: -0.519383
+      skewness: 1.02065
+      entropy: 0.839877
+    Green:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 110.394 (0.43292)
+      standard deviation: 41.334 (0.162094)
+      kurtosis: 2.00187
+      skewness: 1.46048
+      entropy: 0.816047
+    Blue:
+      min: 0  (0)
+      max: 244 (0.956863)
+      mean: 118.63 (0.465215)
+      standard deviation: 75.5964 (0.296456)
+      kurtosis: -1.50408
+      skewness: -0.589183
+      entropy: 0.805144
+  Image statistics:
+    Overall:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 107.501 (0.421573)
+      standard deviation: 62.145 (0.243706)
+      kurtosis: -1.06579
+      skewness: 0.236057
+      entropy: 0.820356
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Matte color: grey74
+  Background color: white
+  Border color: srgb(223,223,223)
+  Transparent color: none
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 139x97+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  Quality: 72
+  Orientation: Undefined
+  Convex hull: 0,0 138,0 138,95 136,96 0,96 0,0 
+  Minimum bounding box: 138,0 138,96 0,96 -5.8783e-15,0 
+  Properties:
+    date:create: 2020-04-17T19:39:25+00:00
+    date:modify: 2020-04-17T19:39:17+00:00
+    jpeg:colorspace: 2
+    jpeg:sampling-factor: 1x1,1x1,1x1
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 13248
+    minimum-bounding-box:height: 138
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 96
+    signature: d40b11152ffe08839367333e59c2e375970adb7e05457af8022092ac1147bc21
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 4311B
+  Number pixels: 13483
+  Pixels per second: 18.1345MP
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 7.0.10-6 Q16 x86_64 2020-04-07 https://imagemagick.org
+</code></pre><h2 id="0x02-jpeg-comment">0x02 jpeg comment</h2>
+<p>首先看看jpeg comment如何，我们使用exiv2写一下</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; exiv2 -c im_so_happy modify payload.jpg
+stonemoe@desktop ~/Desktop&gt; magick identify -verbose payload.jpg
+...省略...(只贴Properties部分，下同)
+ Properties:
+    comment: im_so_happy
+    date:create: 2020-04-17T19:47:54+00:00
+    date:modify: 2020-04-17T19:47:54+00:00
+    jpeg:colorspace: 2
+    jpeg:sampling-factor: 1x1,1x1,1x1
+...省略...
+</code></pre><p>可以看到在Properies下出现了comment属性</p>
+<p>然后再使用imagemagick resize和thumbnail处理一下图片</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; convert -size 110x110 payload.jpg payload_resize.png
+stonemoe@desktop ~/Desktop&gt; convert -thumbnail 110x110 payload.jpg payload_thumb.png
+</code></pre><p>看看resize的结果</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; magick identify -verbose payload_resize.png
+...省略...
+ Properties:
+    comment: im_so_happy
+    date:create: 2020-04-17T19:50:02+00:00
+    date:modify: 2020-04-17T19:50:02+00:00
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 13248
+    minimum-bounding-box:height: 138
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 96
+    png:bKGD: chunk was found (see Background color, above)
+    png:cHRM: chunk was found (see Chromaticity, above)
+    png:gAMA: gamma=0.45455 (See Gamma, above)
+    png:IHDR.bit-depth-orig: 8
+    png:IHDR.bit_depth: 8
+    png:IHDR.color-type-orig: 2
+    png:IHDR.color_type: 2 (Truecolor)
+    png:IHDR.interlace_method: 0 (Not interlaced)
+    png:IHDR.width,height: 139, 97
+    png:sRGB: intent=0 (Perceptual Intent)
+    png:text: 3 tEXt/zTXt/iTXt chunks were found
+    signature: d40b11152ffe08839367333e59c2e375970adb7e05457af8022092ac1147bc21
+...省略...
+</code></pre><p>然后看看thumbnail的结果</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; magick identify -verbose payload_thumb.png
+...省略...
+  Properties:
+    date:create: 2020-04-17T19:51:41+00:00
+    date:modify: 2020-04-17T19:51:41+00:00
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 8284
+    minimum-bounding-box:height: 109
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 76
+    png:bKGD: chunk was found (see Background color, above)
+    png:cHRM: chunk was found (see Chromaticity, above)
+    png:gAMA: gamma=0.45455 (See Gamma, above)
+    png:IHDR.bit-depth-orig: 8
+    png:IHDR.bit_depth: 8
+    png:IHDR.color-type-orig: 6
+    png:IHDR.color_type: 6 (RGBA)
+    png:IHDR.interlace_method: 0 (Not interlaced)
+    png:IHDR.width,height: 110, 77
+    png:sRGB: intent=0 (Perceptual Intent)
+    png:text: 10 tEXt/zTXt/iTXt chunks were found
+    png:tIME: 2020-04-17T19:51:41Z
+    signature: 0649a56200e5c9888c93a78b9b2951b3d1f64db16e824fa90fc865bd9a83450d
+    software: https://imagemagick.org
+    Thumb::Document::Pages: 1
+    Thumb::Image::Height: 97
+    Thumb::Image::Width: 139
+    Thumb::Mimetype: image/jpeg
+    Thumb::MTime: 1587152874
+    Thumb::Size: 4327B
+    Thumb::URI: file://payload.jpg
+...省略...
+</code></pre><p>可以看到resize保留了comment，而thumbnail把comment去掉了</p>
+<h2 id="0x03-exif">0x03 EXIF</h2>
+<p>再看 EXIF，EXIF的定义很多，可以参考<a href="https://www.exiv2.org/tags.html">Exiv2 Exif Tags Reference</a></p>
+<p>我们先选取部分String类型的数据添加一下</p>
+<pre tabindex="0"><code>exiv2 -M &#34;add Exif.GPSInfo.GPSMeasureMode fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.GPSInfo.GPSStatus fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.GPSInfo.GPSStatus fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.GPSInfo.GPSSatellites fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.GPSInfo.GPSLongitudeRef fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.GPSInfo.GPSLatitudeRef fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Iop.RelatedImageFileFormat fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Iop.InteroperabilityIndex fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.LensSerialNumber fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.LensSerialNumber fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.LensModel fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.LensMake fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.BodySerialNumber fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.CameraOwnerName fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.ImageUniqueID fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.RelatedSoundFile fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.SubSecTimeDigitized fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.SubSecTimeOriginal fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.SubSecTime fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.DateTimeDigitized fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.DateTimeOriginal fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Photo.SpectralSensitivity fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.CameraLabel fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ReelName fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.PreviewDateTime fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.CameraSerialNumber fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.UniqueCameraModel fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ImageHistory fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.SecurityClassification fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.DateTimeOriginal fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.SpectralSensitivity fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.Copyright fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ImageID fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.TargetPrinter fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.InkNames fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.HostComputer fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.Artist fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.DateTime fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.Software fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.Model fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.Make fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ProcessingSoftware fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.DocumentName fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ImageDescription fuzz&#34; modify payload.jpg
+exiv2 -M &#34;add Exif.Image.ProcessingSoftware fuzz&#34; modify payload.jpg
+</code></pre><p>看看图片现在的状态</p>
+<pre tabindex="0"><code>Image: payload.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Mime type: image/jpeg
+  Class: DirectClass
+  Geometry: 139x97+0+0
+  Units: Undefined
+  Colorspace: sRGB
+  Type: TrueColor
+  Base type: Undefined
+  Endianess: Undefined
+  Depth: 8-bit
+  Channel depth:
+    Red: 8-bit
+    Green: 8-bit
+    Blue: 8-bit
+  Channel statistics:
+    Pixels: 13483
+    Red:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 93.4788 (0.366584)
+      standard deviation: 69.5047 (0.272567)
+      kurtosis: -0.519383
+      skewness: 1.02065
+      entropy: 0.839877
+    Green:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 110.394 (0.43292)
+      standard deviation: 41.334 (0.162094)
+      kurtosis: 2.00187
+      skewness: 1.46048
+      entropy: 0.816047
+    Blue:
+      min: 0  (0)
+      max: 244 (0.956863)
+      mean: 118.63 (0.465215)
+      standard deviation: 75.5964 (0.296456)
+      kurtosis: -1.50408
+      skewness: -0.589183
+      entropy: 0.805144
+  Image statistics:
+    Overall:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 107.501 (0.421573)
+      standard deviation: 62.145 (0.243706)
+      kurtosis: -1.06579
+      skewness: 0.236057
+      entropy: 0.820356
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Matte color: grey74
+  Background color: white
+  Border color: srgb(223,223,223)
+  Transparent color: none
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 139x97+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  Quality: 72
+  Orientation: Undefined
+  Convex hull: 0,0 138,0 138,95 136,96 0,96 0,0 
+  Minimum bounding box: 138,0 138,96 0,96 -5.8783e-15,0 
+  Profiles:
+    Profile-exif: 884 bytes
+  Properties:
+    comment: im_so_happy
+    date:create: 2020-04-17T20:04:46+00:00
+    date:modify: 2020-04-17T20:04:46+00:00
+    exif:Artist: fuzz
+    exif:BodySerialNumber: fuzz
+    exif:CameraOwnerName: fuzz
+    exif:Copyright: fuzz
+    exif:DateTime: fuzz
+    exif:DateTimeDigitized: fuzz
+    exif:DateTimeOriginal: fuzz
+    exif:DocumentName: fuzz
+    exif:ExifOffset: 452
+    exif:GPSInfo: 764
+    exif:GPSLatitudeRef: fuzz
+    exif:GPSLongitudeRef: fuzz
+    exif:GPSMeasureMode: fuzz
+    exif:GPSSatellites: fuzz
+    exif:GPSStatus: fuzz
+    exif:ImageDescription: fuzz
+    exif:ImageHistory: fuzz
+    exif:ImageID: fuzz
+    exif:ImageUniqueID: fuzz
+    exif:InkNames: fuzz
+    exif:InteroperabilityOffset: 722
+    exif:LensMake: fuzz
+    exif:LensModel: fuzz
+    exif:LensSerialNumber: fuzz
+    exif:Make: fuzz
+    exif:Model: fuzz
+    exif:RelatedSoundFile: fuzz
+    exif:SecurityClassification: fuzz
+    exif:Software: fuzz
+    exif:SpectralSensitivity: fuzz
+    exif:SubSecTime: fuzz
+    exif:SubSecTimeDigitized: fuzz
+    exif:SubSecTimeOriginal: fuzz
+    exif:TargetPrinter: fuzz
+    exif:thumbnail:InteroperabilityIndex: fuzz
+    exif:thumbnail:RelatedImageFileFormat: fuzz
+    jpeg:colorspace: 2
+    jpeg:sampling-factor: 1x1,1x1,1x1
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 13248
+    minimum-bounding-box:height: 138
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 96
+    signature: d40b11152ffe08839367333e59c2e375970adb7e05457af8022092ac1147bc21
+    unknown: fuzz
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 5215B
+  Number pixels: 13483
+  Pixels per second: 26.032MP
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 7.0.10-6 Q16 x86_64 2020-04-07 https://imagemagick.org
+</code></pre><p>这里不知道为啥写了个unknown属性进去，不过无伤大雅</p>
+<p>这些内容在文件中数据长这样
+<img src="/img/2020/04/3748782430.png" alt="2020-04-17T20:08:46.png">
+这里可以看到数据被写在了文件的头部</p>
+<p>再resize和thumbnail一下试试</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; convert -size 110x110 payload.jpg payload_resize.png
+stonemoe@desktop ~/Desktop&gt; magick convert -thumbnail 110x110 payload.jpg payload_thumb.png
+</code></pre><p>先看看resize的结果</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; magick identify -verbose payload_resize.png
+...省略...
+  Properties:
+    comment: im_so_happy
+    date:create: 2020-04-17T20:13:41+00:00
+    date:modify: 2020-04-17T20:13:41+00:00
+    exif:Artist: fuzz
+    exif:BodySerialNumber: fuzz
+    exif:CameraOwnerName: fuzz
+    exif:Copyright: fuzz
+    exif:DateTime: fuzz
+    exif:DateTimeDigitized: fuzz
+    exif:DateTimeOriginal: fuzz
+    exif:DocumentName: fuzz
+    exif:ExifOffset: 452
+    exif:GPSInfo: 764
+    exif:GPSLatitudeRef: fuzz
+    exif:GPSLongitudeRef: fuzz
+    exif:GPSMeasureMode: fuzz
+    exif:GPSSatellites: fuzz
+    exif:GPSStatus: fuzz
+    exif:ImageDescription: fuzz
+    exif:ImageHistory: fuzz
+    exif:ImageID: fuzz
+    exif:ImageUniqueID: fuzz
+    exif:InkNames: fuzz
+    exif:InteroperabilityOffset: 722
+    exif:LensMake: fuzz
+    exif:LensModel: fuzz
+    exif:LensSerialNumber: fuzz
+    exif:Make: fuzz
+    exif:Model: fuzz
+    exif:RelatedSoundFile: fuzz
+    exif:SecurityClassification: fuzz
+    exif:Software: fuzz
+    exif:SpectralSensitivity: fuzz
+    exif:SubSecTime: fuzz
+    exif:SubSecTimeDigitized: fuzz
+    exif:SubSecTimeOriginal: fuzz
+    exif:TargetPrinter: fuzz
+    exif:thumbnail:InteroperabilityIndex: fuzz
+    exif:thumbnail:RelatedImageFileFormat: fuzz
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 13248
+    minimum-bounding-box:height: 138
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 96
+    png:bKGD: chunk was found (see Background color, above)
+    png:cHRM: chunk was found (see Chromaticity, above)
+    png:gAMA: gamma=0.45455 (See Gamma, above)
+    png:IHDR.bit-depth-orig: 8
+    png:IHDR.bit_depth: 8
+    png:IHDR.color-type-orig: 2
+    png:IHDR.color_type: 2 (Truecolor)
+    png:IHDR.interlace_method: 0 (Not interlaced)
+    png:IHDR.width,height: 139, 97
+    png:sRGB: intent=0 (Perceptual Intent)
+    png:text: 40 tEXt/zTXt/iTXt chunks were found
+    signature: d40b11152ffe08839367333e59c2e375970adb7e05457af8022092ac1147bc21
+    unknown: fuzz
+...省略...
+</code></pre><p>可以看到信息完好无损</p>
+<p>并且因为我们resize为png格式，属性相关数据会被移动到文件末尾
+<img src="/img/2020/04/3996259184.png" alt="2020-04-17T20:19:50.png">
+相关标准可以参考<a href="http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html">PNG Chunks Spec</a>以及<a href="http://www.libpng.org/pub/png/book/chapter11.html">PNG Options and Extensions</a></p>
+<p>再看看thumnail的结果</p>
+<pre tabindex="0"><code>...省略...
+  Properties:
+    date:create: 2020-04-17T20:13:47+00:00
+    date:modify: 2020-04-17T20:13:47+00:00
+    exif:Artist: fuzz
+    exif:BodySerialNumber: fuzz
+    exif:CameraOwnerName: fuzz
+    exif:Copyright: fuzz
+    exif:DateTime: fuzz
+    exif:DateTimeDigitized: fuzz
+    exif:DateTimeOriginal: fuzz
+    exif:DocumentName: fuzz
+    exif:ExifOffset: 452
+    exif:GPSInfo: 764
+    exif:GPSLatitudeRef: fuzz
+    exif:GPSLongitudeRef: fuzz
+    exif:GPSMeasureMode: fuzz
+    exif:GPSSatellites: fuzz
+    exif:GPSStatus: fuzz
+    exif:ImageDescription: fuzz
+    exif:ImageHistory: fuzz
+    exif:ImageID: fuzz
+    exif:ImageUniqueID: fuzz
+    exif:InkNames: fuzz
+    exif:InteroperabilityOffset: 722
+    exif:LensMake: fuzz
+    exif:LensModel: fuzz
+    exif:LensSerialNumber: fuzz
+    exif:Make: fuzz
+    exif:Model: fuzz
+    exif:RelatedSoundFile: fuzz
+    exif:SecurityClassification: fuzz
+    exif:Software: fuzz
+    exif:SpectralSensitivity: fuzz
+    exif:SubSecTime: fuzz
+    exif:SubSecTimeDigitized: fuzz
+    exif:SubSecTimeOriginal: fuzz
+    exif:TargetPrinter: fuzz
+    exif:thumbnail:InteroperabilityIndex: fuzz
+    exif:thumbnail:RelatedImageFileFormat: fuzz
+    minimum-bounding-box:angle: 0
+    minimum-bounding-box:area: 8284
+    minimum-bounding-box:height: 109
+    minimum-bounding-box:unrotate: 0
+    minimum-bounding-box:width: 76
+    png:bKGD: chunk was found (see Background color, above)
+    png:cHRM: chunk was found (see Chromaticity, above)
+    png:gAMA: gamma=0.45455 (See Gamma, above)
+    png:IHDR.bit-depth-orig: 8
+    png:IHDR.bit_depth: 8
+    png:IHDR.color-type-orig: 6
+    png:IHDR.color_type: 6 (RGBA)
+    png:IHDR.interlace_method: 0 (Not interlaced)
+    png:IHDR.width,height: 110, 77
+    png:sRGB: intent=0 (Perceptual Intent)
+    png:text: 47 tEXt/zTXt/iTXt chunks were found
+    png:tIME: 2020-04-17T20:13:47Z
+    signature: 0649a56200e5c9888c93a78b9b2951b3d1f64db16e824fa90fc865bd9a83450d
+    software: https://imagemagick.org
+    Thumb::Document::Pages: 1
+    Thumb::Image::Height: 97
+    Thumb::Image::Width: 139
+    Thumb::Mimetype: image/jpeg
+    Thumb::MTime: 1587153886
+    Thumb::Size: 5215B
+    Thumb::URI: file://payload.jpg
+    unknown: fuzz
+...省略...
+</code></pre><p>可以看到jpeg comment没了，但是EXIF还在</p>
+<p>看看文件内容长什么样
+<img src="/img/2020/04/3039335999.png" alt="2020-04-17T20:29:21.png">
+看起来比resize的结果还少了一部分冗余数据</p>
+<h2 id="0x0-试试效果">0x0? 试试效果</h2>
+<p>写一段人畜无害的php代码进去</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; exiv2 -M &#34;add Exif.Image.Copyright &lt;?php echo \&#34;php_is_happy\&#34;; ?&gt;&#34; modify payload.jpg
+stonemoe@desktop ~/Desktop&gt; magick convert -thumbnail 110x110 payload.jpg payload_thumb.png
+</code></pre><p>执行一下</p>
+<pre tabindex="0"><code>stonemoe@desktop ~/Desktop&gt; mv payload_thumb.png test.php
+stonemoe@desktop ~/Desktop&gt; php test.php | xxd | grep -2 php_is
+00003bf0: 6572 4e61 6d65 0066 757a 7a31 7bc0 6000  erName.fuzz1{.`.
+00003c00: 0000 2c74 4558 7465 7869 663a 436f 7079  ..,tEXtexif:Copy
+00003c10: 7269 6768 7400 7068 705f 6973 5f68 6170  right.php_is_hap
+00003c20: 7079 f9d4 5fce 0000 0012 7445 5874 6578  py.._.....tEXtex
+00003c30: 6966 3a44 6174 6554 696d 6500 6675 7a7a  if:DateTime.fuzz
+</code></pre><p>可以看到可以执行</p>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/%e5%ae%89%e5%85%a8/">
+                安全
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  
+
+<script>
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

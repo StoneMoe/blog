@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安全 on StoneMoe&#39;s Blog</title>
+    <link>https://stone.moe/categories/%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 安全 on StoneMoe&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Apr 2020 04:42:00 +0000</lastBuildDate>
+    <atom:link href="https://stone.moe/categories/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Play with imagemagick</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/</link>
+      <pubDate>Sat, 18 Apr 2020 04:42:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;PHP里头比较常见的Web图像处理库有&lt;a href=&#34;https://www.php.net/manual/zh/book.image.php&#34;&gt;GD&lt;/a&gt;和&lt;a href=&#34;https://www.php.net/manual/en/book.imagick.php&#34;&gt;ImageMagick&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;GD里头比较常用的有&lt;a href=&#34;http://www.php.net/imagecopyresized&#34;&gt;imagecopyresized&lt;/a&gt;和&lt;a href=&#34;https://www.php.net/imagecopyresampled&#34;&gt;imagecopyresampled&lt;/a&gt;&#xA;怎么调戏这两个函数的变换已经有很多文章和代码了，比如&lt;a href=&#34;https://gist.github.com/virink/0f184d20ef9f9d92cfcbc656c56e6738&#34;&gt;Github gist&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;今天简单看看ImageMagick里头有没有什么可以保留数据的方法&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JIRA XSS 1day</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/jira-xss-vuln/</link>
+      <pubDate>Wed, 04 Sep 2019 20:46:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/jira-xss-vuln/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;在JIRA v8.3.1还是最新版本的时候，通过Atlassian的邮件提交了该漏洞&#xA;然后等待了几天，Atlassian发布了v8.3.2&#xA;并告知我通过邮件自动在Service desk创建的issue已经不再使用，要去Bugcrowed提交&#xA;于是跑去Bugcrowed提交，又过了一个星期，对方表示非最新版本的漏洞不接受&amp;hellip;.&#xA;最后发现和 talos 撞洞了，一波三折，有些无语 =.=&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WebSocket Hijacking - WebSocket 与 CORS</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/cors-and-ws-conn/</link>
+      <pubDate>Wed, 04 Sep 2019 01:29:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/cors-and-ws-conn/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;&#xA;&lt;p&gt;前一段时间在工作中意外发现，CORS 并不适用于 Websocket 链接。&#xA;具体表现为，浏览器会忽略在websocket upgrade handshake过程中，所返回的 CORS 头。&#xA;比起类似的 CSRF 来说，感觉比较冷门，遂成文记录一下。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>毫无保护的 Muse 小姐姐 - Muse Dash 游戏修改实战</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/modify-my-muse-dash-score/</link>
+      <pubDate>Wed, 26 Jun 2019 21:48:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/modify-my-muse-dash-score/</guid>
+      <description>&lt;p&gt;遇到喜欢的音游当然是破解它啦（不&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python 异常与  __exit__ 行为</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/exception_and_exit/</link>
+      <pubDate>Wed, 21 Nov 2018 10:50:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/exception_and_exit/</guid>
+      <description>&lt;h1 id=&#34;0x00-之前&#34;&gt;0x00 之前&lt;/h1&gt;&#xA;&lt;p&gt;在 RealWorldCTF 里面看到一道白盒审计的题目, 漏洞在一处写反了 decorator 包裹函数的顺序, 而导致的权限绕过, 比较好发现.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一个窃取其他终端用户输入的方法</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/way-to-stealing-other-terminal-input/</link>
+      <pubDate>Wed, 11 Oct 2017 00:10:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/way-to-stealing-other-terminal-input/</guid>
+      <description>&lt;p&gt;rr 挖了一个任意读文件第一行的洞，问怎么root&lt;/p&gt;&#xA;&lt;p&gt;结果开脑洞开歪了玩起了dev&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;cat /dev/pts/1 | tee /dev/pts/1 &amp;gt; /dev/pts/0&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;tty同理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crack M1 Card - 与学校水卡的爱恨情仇</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/crack-m1-card/</link>
+      <pubDate>Mon, 11 Sep 2017 19:19:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/crack-m1-card/</guid>
+      <description>&lt;h2 id=&#34;0x00-十年过去了&#34;&gt;0x00 十年过去了&lt;/h2&gt;&#xA;&lt;p&gt;距离 M1 卡的加密验证缺陷被公开已经过去了十年左右，然而大量基于M1卡储存的系统仍然没有对安全问题进行有效的处理&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;而离广大&lt;!-- raw HTML omitted --&gt;少年&lt;!-- raw HTML omitted --&gt;黑客最近的，便是学校的各种充值卡系统了，在一些学校里，饭卡水卡的余额储存仍然是完全依赖于 M1 卡本身的储存来实现的，当然我们学校的水卡也不例外，否则也不会有这篇文章了。&lt;/p&gt;&#xA;&lt;p&gt;破解离线水卡系统的文章千千万，基本思路都是用现成的工具，通过 Nested Authentication Attack 获取 Key，然后就可以对卡的扇区进行读写操作了，但是与开发者所额外添加的一些安全措施进行对抗的这一过程，仍然是有趣且值得实践一番的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python UTF-9</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/python-utf9/</link>
+      <pubDate>Mon, 11 Sep 2017 17:27:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/python-utf9/</guid>
+      <description>&lt;h2 id=&#34;0x00-奇怪的编码&#34;&gt;0x00 奇怪的编码&lt;/h2&gt;&#xA;&lt;p&gt;今天做一个小题目，遇到了一个奇怪的编码方式，查看 Hint 之后发现使用了 UTF-9&amp;hellip;.&#xA;Emmmm&amp;hellip;..&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

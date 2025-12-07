@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>碎碎念 on StoneMoe&#39;s Blog</title>
+    <link>https://stone.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link>
+    <description>Recent content in 碎碎念 on StoneMoe&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Jun 2021 14:09:25 +0800</lastBuildDate>
+    <atom:link href="https://stone.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrated to Hugo</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/migrated-to-hugo/</link>
+      <pubDate>Wed, 02 Jun 2021 14:09:25 +0800</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/migrated-to-hugo/</guid>
+      <description>&lt;p&gt;参考着https://eallion.com/typecho-to-hugo/ 这篇文档，将博客所有的内容迁移到了Hugo。&lt;/p&gt;&#xA;&lt;p&gt;比起PHP+MySQL，基于静态生成的Hugo显然更适用于博客这种使用场景，托管也变得更容易了。&lt;/p&gt;&#xA;&lt;p&gt;也可以让我可怜的VPS喘口气。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Happy 2021</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2021/</link>
+      <pubDate>Mon, 04 Jan 2021 19:18:56 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2021/</guid>
+      <description>&lt;p&gt;2021年了，祝各位顺利。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>当爱好成为工作</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/when-habit-become-work/</link>
+      <pubDate>Sat, 02 May 2020 13:01:51 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/when-habit-become-work/</guid>
+      <description>&lt;p&gt;这两天思考了爱好与工作的关系，只当写写流水账&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New setup</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/new-setup/</link>
+      <pubDate>Tue, 17 Mar 2020 19:52:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/new-setup/</guid>
+      <description>&lt;p&gt;这些日子折腾了不少：&lt;/p&gt;&#xA;&lt;h2 id=&#34;主力机&#34;&gt;主力机&lt;/h2&gt;&#xA;&lt;p&gt;换成了Windows+Manjaro双系统，用了多多少少一个月了，感觉舒适&lt;br&gt;&#xA;这次由xfce用户转变到了KDE用户，一个全局主题管理功能就在用户友好性上完胜了&lt;/p&gt;&#xA;&lt;p&gt;现在工作在Manjaro下，玩游戏还是换到Windows&lt;br&gt;&#xA;平时有玩的游戏只剩R6S不能在Linux跑了，等它支持linux了就把Windows删了&lt;/p&gt;&#xA;&lt;h2 id=&#34;路由&#34;&gt;路由&lt;/h2&gt;&#xA;&lt;p&gt;从ESXi+OpenWrt换到了PVE+OPNsense&lt;/p&gt;&#xA;&lt;p&gt;用上了suricata，内置ruleset真是丰富，都不敢全部设置成DROP&lt;br&gt;&#xA;分了两个G的内存，用了80%左右，reload ruleset的时候还可能会内存爆炸&lt;br&gt;&#xA;真是把这路由的小身板吃干抹净了&lt;/p&gt;&#xA;&lt;p&gt;通过syslog，把gateway日志和suricata收集的网络流量payload全部打到群晖的日志套件里归档&lt;br&gt;&#xA;很优雅，也很没有必要，但群晖真好用，连syslog collector都有&lt;/p&gt;&#xA;&lt;h2 id=&#34;updates&#34;&gt;Updates&lt;/h2&gt;&#xA;&lt;p&gt;2020-03-21: 还是换回了OpenWRT，OPNsense 的生态不太适合个人使用&lt;/p&gt;&#xA;&lt;p&gt;2021-12-15: 在那之后，遇到的Linux桌面各式各样的小问题实在是太多，一点一滴的不满堆积起来，最终还是让我换回了Windows+macOS。不过已经是很久之前换回来的了，一直没有更新博客 :P&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Happy New Year</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 20:38:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2020/</guid>
+      <description>&lt;p&gt;今天是2020年的第一天。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>博客正在恢复中</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/start/</link>
+      <pubDate>Mon, 11 Sep 2017 15:00:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/start/</guid>
+      <description>&lt;p&gt;今天是2017年9月11日，上次因为手滑把vps删掉了，文章丢失了一部分。&lt;/p&gt;&#xA;&lt;p&gt;于是正在把之前从谷歌缓存里找回的内容逐渐的恢复回来&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;一些文章可能会因为&lt;strong&gt;自己不满意&lt;/strong&gt;，&lt;strong&gt;排版糟糕&lt;/strong&gt;，&lt;strong&gt;内容冗余&lt;/strong&gt;的原因，重新进行撰写和结构组织。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

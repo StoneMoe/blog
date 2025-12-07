@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on StoneMoe&#39;s Blog</title>
+    <link>https://stone.moe/categories/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on StoneMoe&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Oct 2019 16:22:00 +0000</lastBuildDate>
+    <atom:link href="https://stone.moe/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一个简单的 Python 沙箱实现思路</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/simple-python-sandbox/</link>
+      <pubDate>Tue, 22 Oct 2019 16:22:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/simple-python-sandbox/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;这段时间做的产品里，有运行用户脚本的需求。&#xA;于是今天写一篇文章，简单介绍一下一把梭、低成本实现 Python 沙箱的思路。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monkey Patch 实战2 - 修复 Eventlet 编码 Bug</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python-2/</link>
+      <pubDate>Wed, 07 Mar 2018 19:25:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python-2/</guid>
+      <description>&lt;h2 id=&#34;0x00-前情提要&#34;&gt;0x00 前情提要&lt;/h2&gt;&#xA;&lt;p&gt;之前因为 Python-EngineIO 没有实现 Socket.IO 中 JSONP-Polling 的支持，于是尝试着通过 Monkey Patch 的形式给它加上。&#xA;&lt;a href=&#34;https://stone.moe/default/dynamic-patch-in-python.html&#34;&gt;Python 动态 Patch 实战 (1)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monkey Patch 实战1 - 为 Flask-SocketIO 添加 JsonP 支持</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python/</link>
+      <pubDate>Sat, 03 Mar 2018 19:19:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;其实我也不太清楚这种操作到底该叫什么&#xA;不过跟 &lt;code&gt;Monkey patch&lt;/code&gt; 似乎是一个用途，就是在运行时修改代码&#xA;于是我就先叫他 &lt;code&gt;Dynamic patch&lt;/code&gt; 啦&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>简单项目的反思以及一个简单的自动化部署方法</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/tiny-project-thoughts-and-deployment/</link>
+      <pubDate>Mon, 13 Nov 2017 23:08:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/tiny-project-thoughts-and-deployment/</guid>
+      <description>&lt;p&gt;大一刚开始时，因为校园网的拨号软件过于难用这一契机，开始独立开发面向校内的数字化校园项目&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一个轻量级的 Python 插件系统</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/python-minimal-plugin-system/</link>
+      <pubDate>Mon, 30 Oct 2017 06:13:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/python-minimal-plugin-system/</guid>
+      <description>&lt;p&gt;这两天想把基于 Flask 的 Telegram Bot 重新写一下，之前一把梭的太难看了。&#xA;顺便把一直想写的插件系统实现一下，这里单独把插件部分摘出来记录分享一下&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>简单的梳理几种 POST body 标准</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/some-post-spec/</link>
+      <pubDate>Wed, 25 Oct 2017 21:21:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/some-post-spec/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;HTTP 本身，POST body是不限格式的。&lt;/p&gt;&#xA;&lt;p&gt;然而没有标准怎么行，于是有好几种 Content-Type 和 encoding 方案给 POST 用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>C# WebClient DownloadStringAsync 的一个坑</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/about-csharp-webclient-downloadstringasync-function/</link>
+      <pubDate>Mon, 11 Sep 2017 17:24:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/about-csharp-webclient-downloadstringasync-function/</guid>
+      <description>&lt;h2 id=&#34;0x00-一个坑两个坑三个坑&#34;&gt;0x00 一个坑&amp;hellip;两个坑&amp;hellip;三个坑&lt;/h2&gt;&#xA;&lt;p&gt;坑多才能进步&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>uWSGI 是如何工作的？</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/how-uwsgi-works/</link>
+      <pubDate>Mon, 11 Sep 2017 17:07:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/how-uwsgi-works/</guid>
+      <description>&lt;h2 id=&#34;0x00-引言&#34;&gt;0x00 引言&lt;/h2&gt;&#xA;&lt;p&gt;我觉得，使用工具时，了解其中的原理才能用的更舒心，更加无所顾忌。&#xA;对于程序员来说更是如此。&lt;/p&gt;&#xA;&lt;p&gt;抱着这样的心态，针对 Python 处理 HTTP 请求的工作过程做了实验，并做了一些总结归纳。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

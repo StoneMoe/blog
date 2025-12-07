@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on StoneMoe&#39;s Blog</title>
+    <link>https://stone.moe/posts/</link>
+    <description>Recent content in Posts on StoneMoe&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Jun 2021 14:09:25 +0800</lastBuildDate>
+    <atom:link href="https://stone.moe/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrated to Hugo</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/migrated-to-hugo/</link>
+      <pubDate>Wed, 02 Jun 2021 14:09:25 +0800</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/migrated-to-hugo/</guid>
+      <description>&lt;p&gt;参考着https://eallion.com/typecho-to-hugo/ 这篇文档，将博客所有的内容迁移到了Hugo。&lt;/p&gt;&#xA;&lt;p&gt;比起PHP+MySQL，基于静态生成的Hugo显然更适用于博客这种使用场景，托管也变得更容易了。&lt;/p&gt;&#xA;&lt;p&gt;也可以让我可怜的VPS喘口气。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Happy 2021</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2021/</link>
+      <pubDate>Mon, 04 Jan 2021 19:18:56 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2021/</guid>
+      <description>&lt;p&gt;2021年了，祝各位顺利。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gitlab 迁移/升级后部分页面500</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/gitlab-500-error-after-upgrade-or-migrate/</link>
+      <pubDate>Sun, 03 May 2020 13:53:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/gitlab-500-error-after-upgrade-or-migrate/</guid>
+      <description>&lt;h2 id=&#34;表现&#34;&gt;表现&lt;/h2&gt;&#xA;&lt;p&gt;在保存管理员设置时，或访问 Repo 的 CI/CD 页面时 500 错误&#xA;查看 Monitoring -&amp;gt; Log -&amp;gt; production.log 时，日志如下&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;OpenSSL::Cipher::CipherError ():&#xD;&#xA;&#xD;&#xA;lib/gitlab/crypto_helper.rb:27:in `aes256_gcm_decrypt&amp;#39;&#xD;&#xA;&amp;lt;...后略...&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>如何重装系统</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-install-os/</link>
+      <pubDate>Sat, 02 May 2020 13:47:13 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-install-os/</guid>
+      <description>&lt;p&gt;这是给零技术基础朋友们看的，简明易懂的系统安装教程。&lt;/p&gt;&#xA;&lt;p&gt;也是为了当有人问起“如何给自己的电脑重装系统”，能够直接把这篇文章给电脑前的你看，而不用我再一句话一句话的打字了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>当爱好成为工作</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/when-habit-become-work/</link>
+      <pubDate>Sat, 02 May 2020 13:01:51 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/when-habit-become-work/</guid>
+      <description>&lt;p&gt;这两天思考了爱好与工作的关系，只当写写流水账&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Play with imagemagick</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/</link>
+      <pubDate>Sat, 18 Apr 2020 04:42:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/play-with-imagemagick/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;PHP里头比较常见的Web图像处理库有&lt;a href=&#34;https://www.php.net/manual/zh/book.image.php&#34;&gt;GD&lt;/a&gt;和&lt;a href=&#34;https://www.php.net/manual/en/book.imagick.php&#34;&gt;ImageMagick&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;GD里头比较常用的有&lt;a href=&#34;http://www.php.net/imagecopyresized&#34;&gt;imagecopyresized&lt;/a&gt;和&lt;a href=&#34;https://www.php.net/imagecopyresampled&#34;&gt;imagecopyresampled&lt;/a&gt;&#xA;怎么调戏这两个函数的变换已经有很多文章和代码了，比如&lt;a href=&#34;https://gist.github.com/virink/0f184d20ef9f9d92cfcbc656c56e6738&#34;&gt;Github gist&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;今天简单看看ImageMagick里头有没有什么可以保留数据的方法&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Share folder to Windows with libvirt</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/share-folder-to-windows-with-libvirt-kvm-qemu/</link>
+      <pubDate>Tue, 24 Mar 2020 00:23:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/share-folder-to-windows-with-libvirt-kvm-qemu/</guid>
+      <description>&lt;p&gt;This post introduced how to share linux folder to Windows guest VM&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New setup</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/new-setup/</link>
+      <pubDate>Tue, 17 Mar 2020 19:52:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/new-setup/</guid>
+      <description>&lt;p&gt;这些日子折腾了不少：&lt;/p&gt;&#xA;&lt;h2 id=&#34;主力机&#34;&gt;主力机&lt;/h2&gt;&#xA;&lt;p&gt;换成了Windows+Manjaro双系统，用了多多少少一个月了，感觉舒适&lt;br&gt;&#xA;这次由xfce用户转变到了KDE用户，一个全局主题管理功能就在用户友好性上完胜了&lt;/p&gt;&#xA;&lt;p&gt;现在工作在Manjaro下，玩游戏还是换到Windows&lt;br&gt;&#xA;平时有玩的游戏只剩R6S不能在Linux跑了，等它支持linux了就把Windows删了&lt;/p&gt;&#xA;&lt;h2 id=&#34;路由&#34;&gt;路由&lt;/h2&gt;&#xA;&lt;p&gt;从ESXi+OpenWrt换到了PVE+OPNsense&lt;/p&gt;&#xA;&lt;p&gt;用上了suricata，内置ruleset真是丰富，都不敢全部设置成DROP&lt;br&gt;&#xA;分了两个G的内存，用了80%左右，reload ruleset的时候还可能会内存爆炸&lt;br&gt;&#xA;真是把这路由的小身板吃干抹净了&lt;/p&gt;&#xA;&lt;p&gt;通过syslog，把gateway日志和suricata收集的网络流量payload全部打到群晖的日志套件里归档&lt;br&gt;&#xA;很优雅，也很没有必要，但群晖真好用，连syslog collector都有&lt;/p&gt;&#xA;&lt;h2 id=&#34;updates&#34;&gt;Updates&lt;/h2&gt;&#xA;&lt;p&gt;2020-03-21: 还是换回了OpenWRT，OPNsense 的生态不太适合个人使用&lt;/p&gt;&#xA;&lt;p&gt;2021-12-15: 在那之后，遇到的Linux桌面各式各样的小问题实在是太多，一点一滴的不满堆积起来，最终还是让我换回了Windows+macOS。不过已经是很久之前换回来的了，一直没有更新博客 :P&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AnyPush - SMTP to webhook</title>
+      <link>https://stone.moe/posts/%E5%88%9B%E9%80%A0/synology-mail-redirect-by-anypush/</link>
+      <pubDate>Sat, 22 Feb 2020 23:44:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%88%9B%E9%80%A0/synology-mail-redirect-by-anypush/</guid>
+      <description>&lt;h2 id=&#34;0x00&#34;&gt;0x00&lt;/h2&gt;&#xA;&lt;p&gt;学会哭着吃饭是人生的阶段标志之一&lt;/p&gt;&#xA;&lt;h2 id=&#34;0x01-anypush&#34;&gt;0x01 Anypush&lt;/h2&gt;&#xA;&lt;p&gt;这个工具的初期目的，主要用于将 Synology NAS 的邮件通知转换到 webhook HTTP 请求。&#xA;当然也可以用于一切需要将 SMTP 发送邮件的行为转换为 HTTP Request 的使用场景。&lt;/p&gt;&#xA;&lt;p&gt;之所以起名叫做 AnyPush，是因为之后还想给他增加更丰富的自定义选项，使其成为一个pipeline工具。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Happy New Year</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 20:38:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/happy-2020/</guid>
+      <description>&lt;p&gt;今天是2020年的第一天。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一个简单的 Python 沙箱实现思路</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/simple-python-sandbox/</link>
+      <pubDate>Tue, 22 Oct 2019 16:22:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/simple-python-sandbox/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;这段时间做的产品里，有运行用户脚本的需求。&#xA;于是今天写一篇文章，简单介绍一下一把梭、低成本实现 Python 沙箱的思路。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JIRA XSS 1day</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/jira-xss-vuln/</link>
+      <pubDate>Wed, 04 Sep 2019 20:46:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/jira-xss-vuln/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;在JIRA v8.3.1还是最新版本的时候，通过Atlassian的邮件提交了该漏洞&#xA;然后等待了几天，Atlassian发布了v8.3.2&#xA;并告知我通过邮件自动在Service desk创建的issue已经不再使用，要去Bugcrowed提交&#xA;于是跑去Bugcrowed提交，又过了一个星期，对方表示非最新版本的漏洞不接受&amp;hellip;.&#xA;最后发现和 talos 撞洞了，一波三折，有些无语 =.=&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WebSocket Hijacking - WebSocket 与 CORS</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/cors-and-ws-conn/</link>
+      <pubDate>Wed, 04 Sep 2019 01:29:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/cors-and-ws-conn/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;&#xA;&lt;p&gt;前一段时间在工作中意外发现，CORS 并不适用于 Websocket 链接。&#xA;具体表现为，浏览器会忽略在websocket upgrade handshake过程中，所返回的 CORS 头。&#xA;比起类似的 CSRF 来说，感觉比较冷门，遂成文记录一下。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>毫无保护的 Muse 小姐姐 - Muse Dash 游戏修改实战</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/modify-my-muse-dash-score/</link>
+      <pubDate>Wed, 26 Jun 2019 21:48:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/modify-my-muse-dash-score/</guid>
+      <description>&lt;p&gt;遇到喜欢的音游当然是破解它啦（不&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python 异常与  __exit__ 行为</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/exception_and_exit/</link>
+      <pubDate>Wed, 21 Nov 2018 10:50:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/exception_and_exit/</guid>
+      <description>&lt;h1 id=&#34;0x00-之前&#34;&gt;0x00 之前&lt;/h1&gt;&#xA;&lt;p&gt;在 RealWorldCTF 里面看到一道白盒审计的题目, 漏洞在一处写反了 decorator 包裹函数的顺序, 而导致的权限绕过, 比较好发现.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何在软路由中安装 ESXi</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/install-esxi-directly-at-x86-router/</link>
+      <pubDate>Sun, 26 Aug 2018 12:30:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/install-esxi-directly-at-x86-router/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;这是一篇面向大众的教程&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;对 bare vm supervisor 了解的不多，而ESXi的安装程序又有些智障，在x86软路由上，这安装程序的问题似乎尤为的突出&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;这次折腾ESXi的途中被它坑了两下，这里简单的总结一下遇到的两个坑。&lt;/p&gt;&#xA;&lt;p&gt;ESXi版本: &lt;code&gt;6.7.0&lt;/code&gt; (官网 iso 镜像, rufus 写入 U 盘)&#xA;硬件: 小马 x86 软路由 V2&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何手动升级 glibc 的版本</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-upgrade-linux-glibc-manually/</link>
+      <pubDate>Tue, 31 Jul 2018 14:16:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/how-to-upgrade-linux-glibc-manually/</guid>
+      <description>&lt;h2 id=&#34;1-前言&#34;&gt;1 前言&lt;/h2&gt;&#xA;&lt;p&gt;在测试服务器上想把 tensorflow 相关代码部署一下&lt;/p&gt;&#xA;&lt;p&gt;却发现 CentOS 6.1 带的 &lt;code&gt;glibc&lt;/code&gt; 和 &lt;code&gt;libstdc++&lt;/code&gt; 都太老了，tensorflow跑不起来。&lt;/p&gt;&#xA;&lt;p&gt;于是想手动升级一下这两个 lib。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monkey Patch 实战2 - 修复 Eventlet 编码 Bug</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python-2/</link>
+      <pubDate>Wed, 07 Mar 2018 19:25:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python-2/</guid>
+      <description>&lt;h2 id=&#34;0x00-前情提要&#34;&gt;0x00 前情提要&lt;/h2&gt;&#xA;&lt;p&gt;之前因为 Python-EngineIO 没有实现 Socket.IO 中 JSONP-Polling 的支持，于是尝试着通过 Monkey Patch 的形式给它加上。&#xA;&lt;a href=&#34;https://stone.moe/default/dynamic-patch-in-python.html&#34;&gt;Python 动态 Patch 实战 (1)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monkey Patch 实战1 - 为 Flask-SocketIO 添加 JsonP 支持</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python/</link>
+      <pubDate>Sat, 03 Mar 2018 19:19:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/dynamic-patch-in-python/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;其实我也不太清楚这种操作到底该叫什么&#xA;不过跟 &lt;code&gt;Monkey patch&lt;/code&gt; 似乎是一个用途，就是在运行时修改代码&#xA;于是我就先叫他 &lt;code&gt;Dynamic patch&lt;/code&gt; 啦&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>简单项目的反思以及一个简单的自动化部署方法</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/tiny-project-thoughts-and-deployment/</link>
+      <pubDate>Mon, 13 Nov 2017 23:08:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/tiny-project-thoughts-and-deployment/</guid>
+      <description>&lt;p&gt;大一刚开始时，因为校园网的拨号软件过于难用这一契机，开始独立开发面向校内的数字化校园项目&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一个轻量级的 Python 插件系统</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/python-minimal-plugin-system/</link>
+      <pubDate>Mon, 30 Oct 2017 06:13:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/python-minimal-plugin-system/</guid>
+      <description>&lt;p&gt;这两天想把基于 Flask 的 Telegram Bot 重新写一下，之前一把梭的太难看了。&#xA;顺便把一直想写的插件系统实现一下，这里单独把插件部分摘出来记录分享一下&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ocserv config-per-group 的配置</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/ocserv-config-example/</link>
+      <pubDate>Sun, 29 Oct 2017 15:12:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/ocserv-config-example/</guid>
+      <description>&lt;p&gt;新增用户时指定用户所在的 Group&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# ocpasswd -c /path/to/passwd/file -g &amp;quot;groupname,groupname2,groupxxx&amp;quot; username&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;ocserv.conf 里面几个关键配置&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 关掉自动选择&#xD;&#xA;auto-select-group = false&#xD;&#xA;# 定义几个 group identify，中括号里面可以写 description&#xD;&#xA;select-group = all&#xD;&#xA;select-group = aws[no bracket or add some description]&#xD;&#xA;select-group = nochn[No CN route]&#xD;&#xA;....&#xD;&#xA;# 指定一个存 config-per-group 的路径&#xD;&#xA;config-per-group = /etc/ocserv/config-per-group/&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后我们&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# mkdir /etc/ocserv/config-per-group&#xD;&#xA;# cd /etc/ocserv/config-per-group&#xD;&#xA;# touch all aws nochn&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后在这几个文件里可以写上 config，来覆盖掉 ocserv.conf 主配置文件的设置。&#xA;比如在 nochn 写上一点 no-route。&#xA;也可以在 aws 写上一些 route，让这个组的用户在连接后只接收一些到 aws 的 route table。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>简单的梳理几种 POST body 标准</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/some-post-spec/</link>
+      <pubDate>Wed, 25 Oct 2017 21:21:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/some-post-spec/</guid>
+      <description>&lt;h2 id=&#34;0x00-前言&#34;&gt;0x00 前言&lt;/h2&gt;&#xA;&lt;p&gt;HTTP 本身，POST body是不限格式的。&lt;/p&gt;&#xA;&lt;p&gt;然而没有标准怎么行，于是有好几种 Content-Type 和 encoding 方案给 POST 用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一个窃取其他终端用户输入的方法</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/way-to-stealing-other-terminal-input/</link>
+      <pubDate>Wed, 11 Oct 2017 00:10:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/way-to-stealing-other-terminal-input/</guid>
+      <description>&lt;p&gt;rr 挖了一个任意读文件第一行的洞，问怎么root&lt;/p&gt;&#xA;&lt;p&gt;结果开脑洞开歪了玩起了dev&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;cat /dev/pts/1 | tee /dev/pts/1 &amp;gt; /dev/pts/0&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;tty同理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mosh 因为 locale 无法使用的问题</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/mosh-locale-issue/</link>
+      <pubDate>Tue, 10 Oct 2017 16:01:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/mosh-locale-issue/</guid>
+      <description>&lt;h2 id=&#34;0x00-提出问题&#34;&gt;0x00 提出问题&lt;/h2&gt;&#xA;&lt;p&gt;一般遇到这个问题，我们会看到类似于这样的错误信息&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VirtualBox, VMware Workstation, 以及 Hyper-V 的一些对比</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/hypervisor-comparison/</link>
+      <pubDate>Tue, 10 Oct 2017 03:46:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/hypervisor-comparison/</guid>
+      <description>&lt;h2 id=&#34;0x00-到底哪个好&#34;&gt;0x00 到底哪个好？&lt;/h2&gt;&#xA;&lt;p&gt;因为打游戏和别人语音需要用到 YY 和 QQ，而我又实在不想把这两个流氓装在电脑上，于是丢进了虚拟机里。&lt;/p&gt;&#xA;&lt;p&gt;因为是日常使用，并不是开发用途&#xA;所以3D加速让界面能够跟手一些，用的更舒服一些，以及音频设备的延迟能低一些让语音的体验更好，是我的主要需求。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crack M1 Card - 与学校水卡的爱恨情仇</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/crack-m1-card/</link>
+      <pubDate>Mon, 11 Sep 2017 19:19:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/crack-m1-card/</guid>
+      <description>&lt;h2 id=&#34;0x00-十年过去了&#34;&gt;0x00 十年过去了&lt;/h2&gt;&#xA;&lt;p&gt;距离 M1 卡的加密验证缺陷被公开已经过去了十年左右，然而大量基于M1卡储存的系统仍然没有对安全问题进行有效的处理&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;而离广大&lt;!-- raw HTML omitted --&gt;少年&lt;!-- raw HTML omitted --&gt;黑客最近的，便是学校的各种充值卡系统了，在一些学校里，饭卡水卡的余额储存仍然是完全依赖于 M1 卡本身的储存来实现的，当然我们学校的水卡也不例外，否则也不会有这篇文章了。&lt;/p&gt;&#xA;&lt;p&gt;破解离线水卡系统的文章千千万，基本思路都是用现成的工具，通过 Nested Authentication Attack 获取 Key，然后就可以对卡的扇区进行读写操作了，但是与开发者所额外添加的一些安全措施进行对抗的这一过程，仍然是有趣且值得实践一番的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tinc 一把梭快速上手</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/tinc-quickstart/</link>
+      <pubDate>Mon, 11 Sep 2017 17:33:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/tinc-quickstart/</guid>
+      <description>&lt;h2 id=&#34;0x00-小镇的网络&#34;&gt;0x00 小镇的网络&lt;/h2&gt;&#xA;&lt;p&gt;海外 IP 高位端口的 Inbound 流量全都被封了&#xA;原来用的是 Zerotier，不过不受自己控制的 Server 总感觉使用起来怪怪的。&#xA;从 &lt;em&gt;49&lt;/em&gt; 那里了解到了 Tinc VPN&#xA;于是借着这个机会玩一玩高端大气上档次的 SDN/Mesh Network&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>macOS 音量媒体键延迟严重</title>
+      <link>https://stone.moe/posts/%E6%95%99%E7%A8%8B/macos-media-key-lag-issue/</link>
+      <pubDate>Mon, 11 Sep 2017 17:29:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E6%95%99%E7%A8%8B/macos-media-key-lag-issue/</guid>
+      <description>&lt;p&gt;冰冷的天里散热风扇胡乱地吹，冰凉的 mac 把它的体温通过C面手托传递给我的手&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python UTF-9</title>
+      <link>https://stone.moe/posts/%E5%AE%89%E5%85%A8/python-utf9/</link>
+      <pubDate>Mon, 11 Sep 2017 17:27:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%AE%89%E5%85%A8/python-utf9/</guid>
+      <description>&lt;h2 id=&#34;0x00-奇怪的编码&#34;&gt;0x00 奇怪的编码&lt;/h2&gt;&#xA;&lt;p&gt;今天做一个小题目，遇到了一个奇怪的编码方式，查看 Hint 之后发现使用了 UTF-9&amp;hellip;.&#xA;Emmmm&amp;hellip;..&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>C# WebClient DownloadStringAsync 的一个坑</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/about-csharp-webclient-downloadstringasync-function/</link>
+      <pubDate>Mon, 11 Sep 2017 17:24:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/about-csharp-webclient-downloadstringasync-function/</guid>
+      <description>&lt;h2 id=&#34;0x00-一个坑两个坑三个坑&#34;&gt;0x00 一个坑&amp;hellip;两个坑&amp;hellip;三个坑&lt;/h2&gt;&#xA;&lt;p&gt;坑多才能进步&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>uWSGI 是如何工作的？</title>
+      <link>https://stone.moe/posts/%E5%BC%80%E5%8F%91/how-uwsgi-works/</link>
+      <pubDate>Mon, 11 Sep 2017 17:07:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E5%BC%80%E5%8F%91/how-uwsgi-works/</guid>
+      <description>&lt;h2 id=&#34;0x00-引言&#34;&gt;0x00 引言&lt;/h2&gt;&#xA;&lt;p&gt;我觉得，使用工具时，了解其中的原理才能用的更舒心，更加无所顾忌。&#xA;对于程序员来说更是如此。&lt;/p&gt;&#xA;&lt;p&gt;抱着这样的心态，针对 Python 处理 HTTP 请求的工作过程做了实验，并做了一些总结归纳。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>博客正在恢复中</title>
+      <link>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/start/</link>
+      <pubDate>Mon, 11 Sep 2017 15:00:00 +0000</pubDate>
+      <guid>https://stone.moe/posts/%E7%A2%8E%E7%A2%8E%E5%BF%B5/start/</guid>
+      <description>&lt;p&gt;今天是2017年9月11日，上次因为手滑把vps删掉了，文章丢失了一部分。&lt;/p&gt;&#xA;&lt;p&gt;于是正在把之前从谷歌缓存里找回的内容逐渐的恢复回来&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;一些文章可能会因为&lt;strong&gt;自己不满意&lt;/strong&gt;，&lt;strong&gt;排版糟糕&lt;/strong&gt;，&lt;strong&gt;内容冗余&lt;/strong&gt;的原因，重新进行撰写和结构组织。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
